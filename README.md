@@ -1,3 +1,9 @@
+# Submission Overview
+-  Live Demo: https://ai-profile-builder.vercel.app/
+-  Summary Doc: [Google Doc/PDF Link Here]
+-  Built with: Next.js, Node.js, OpenAI, GitHub API, PDL
+
+
 # Profile Enrichment Platform
 
 A full-stack application that enriches user profiles by combining data from GitHub, People Data Labs, and OpenAI APIs.
@@ -9,7 +15,7 @@ Instead of forcing users to manually fill out long forms, the system pulls infor
 
 ---
 
-## 🎯 Case Study Summary
+##  Case Study Summary
 
 ### Why
 Traditional onboarding requires users to fill long forms, leading to high drop-off rates and incomplete data.  
@@ -35,7 +41,7 @@ An **AI Agent Profile Builder** that:
   - Clearbit API (enrichment from name/email).  
   - OpenAI (fallback profile synthesis if no public data). 
 
-## 🚀 Features
+##  Features
 
 - **Frontend**: Next.js with App Router, TypeScript, and TailwindCSS
 - **Backend**: Node.js + Express API server
@@ -108,8 +114,12 @@ npm run dev
 ```
 
 The application will be available at:
+## locally
 - Frontend: http://localhost:3000
 - Backend API: http://localhost:5000
+## production
+- Frontend: vercel
+- Backend API: render
 
 ## 🔧 API Endpoints
 
@@ -167,8 +177,4 @@ Enriches a user profile with data from multiple sources.
 
 ## 🚀 Deployment
 
-The project is ready for deployment on platforms like Vercel (frontend) and Railway/Heroku (backend).
-
-## 📝 License
-
-MIT License - feel free to use this project for your own purposes.
+The project is ready and has been deployed on platforms like Vercel (frontend) and Render (backend).

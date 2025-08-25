@@ -24,7 +24,7 @@ export default function Home() {
     setProfile(null)
 
     try {
-      const response = await fetch('http://localhost:5001/api/enrich', {
+      const response = await fetch('https://ai-profile-builder.onrender.com/api/enrich', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
