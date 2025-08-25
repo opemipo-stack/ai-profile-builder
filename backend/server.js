@@ -23,12 +23,21 @@ const limiter = rateLimit({
 app.use(limiter)
 
 // CORS configuration
+// app.use(cors({
+//   origin: process.env.NODE_ENV === 'production' 
+//     ? ['https://ai-profile-builder.vercel.app'] 
+//     : ['http://localhost:3000'],
+//   credentials: true
+// }))
 app.use(cors({
-  origin: process.env.NODE_ENV === 'development' 
-    ? ['https://ai-profile-builder.vercel.app'] 
-    : ['http://localhost:3000'],
-  credentials: true
-}))
+  origin: [
+    "http://localhost:3000",                 // for local dev
+    "https://ai-profile-builder.vercel.app"       // replace with your deployed frontend domain
+  ],
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  allowedHeaders: ["Content-Type", "Authorization"]
+}));
+
 
 // Body parsing middleware
 app.use(express.json({ limit: '10mb' }))
@@ -39,7 +48,6 @@ app.get('/health', (req, res) => {
   res.json({ 
     status: 'OK', 
     timestamp: new Date().toISOString(),
-    environment: process.env.NODE_ENV || 'development'
   })
 })
 
@@ -59,7 +67,6 @@ app.use((err, req, res, next) => {
   console.error('Global error handler:', err)
   res.status(500).json({ 
     error: 'Internal server error',
-    message: process.env.NODE_ENV === 'development' ? err.message : 'Something went wrong'
   })
 })
 
