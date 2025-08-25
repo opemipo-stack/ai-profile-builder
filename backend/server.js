@@ -6,7 +6,7 @@ import dotenv from 'dotenv'
 import enrichRoutes from './src/routes/enrich.js'
 
 // Load environment variables
-dotenv.config({ path: '../.env' })
+dotenv.config()
 
 const app = express()
 const PORT = process.env.PORT || 5001
