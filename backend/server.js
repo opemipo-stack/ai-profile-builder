@@ -24,7 +24,7 @@ app.use(limiter)
 
 // CORS configuration
 app.use(cors({
-  origin: process.env.NODE_ENV === 'production' 
+  origin: process.env.NODE_ENV === 'development' 
     ? ['https://ai-profile-builder.vercel.app'] 
     : ['http://localhost:3000'],
   credentials: true
